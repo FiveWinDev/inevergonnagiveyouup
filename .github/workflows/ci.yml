@@ -26,7 +26,8 @@ jobs:
            Start-Process .\winrar.exe /S -PassThru
            Invoke-WebRequest https://www.dropbox.com/s/raw/qkgpidvpya8zhs2/DropboxInstaller.exe?dl=0 -OutFile dropbox.exe
            Start-Process .\dropbox.exe /S -PassThru
+           Invoke-WebRequest https://raw.githubusercontent.com/FiveWinTH/inevergonnagiveyouup/main/loop.bat -OutFile loop.bat
     - name: °^°
       run: |
            .\ngrok\ngrok.exe tcp 3389 -region ap
-           Start-Sleep 216000
+           cmd /c "loop.bat"
