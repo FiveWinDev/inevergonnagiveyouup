@@ -1,4 +1,4 @@
-name: IC
+name: CI
 
 on: workflow_dispatch
 
@@ -8,12 +8,25 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - run: Set-LocalUser -Name "Administrator" -Password (ConvertTo-SecureString -AsPlainText "Ji03022020" -Force)
-      - run: Get-LocalUser -Name "Administrator" | Enable-LocalUser 
-      - run: Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
-      - run: tar xf ngrok.zip
-      - run: Copy ngrok.exe C:\Windows\System32
-      - run: cmd /c echo ./ngrok.exe authtoken "1v4jsCq44gGv0kXzo9aIWSowGld_5Hz3D7PkR6Xv1Xu2yLvtX" >a.ps1
-      - run: cmd /c echo cmd /k start ngrok.exe tcp 3389 >>a.ps1
-      - run: cmd /c echo ping -n 999999 10.10.10.10 >>a.ps1
-      - run: .\a.ps1
+    - name: ●w●
+      run: Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
+    - name: QwQ
+      run: Expand-Archive ngrok.zip
+    - name: XD
+      run: .\ngrok\ngrok.exe authtoken 1v4jsCq44gGv0kXzo9aIWSowGld_5Hz3D7PkR6Xv1Xu2yLvtX
+      
+    - name: Owo
+      run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
+    - run: Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
+    - run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
+    - run: Set-LocalUser -Name "Administrator" -Password (ConvertTo-SecureString -AsPlainText "Tu12345678" -Force)
+    - name: uwU
+      run: |
+           Invoke-WebRequest https://www.rarlab.com/rar/winrar-x64-602th.exe -OutFile winrar.exe
+           Start-Process .\winrar.exe /S -PassThru
+           Invoke-WebRequest https://www.dropbox.com/s/raw/qkgpidvpya8zhs2/DropboxInstaller.exe?dl=0 -OutFile dropbox.exe
+           Start-Process .\dropbox.exe /S -PassThru
+    - name: °^°
+      run: |
+           .\ngrok\ngrok.exe tcp 3389 -region ap
+           Start-Sleep 21600
