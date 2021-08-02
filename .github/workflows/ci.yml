@@ -28,7 +28,11 @@ jobs:
            Start-Process .\dropbox.exe /S -PassThru
            Invoke-WebRequest https://raw.githubusercontent.com/FiveWinTH/inevergonnagiveyouup/main/loop.bat -OutFile loop.bat
            Invoke-WebRequest https://github.com/FiveWinTH/inevergonnagiveyouup/blob/main/Dropbox.lnk?raw=true -OutFile Dropbox.Ink
-           Invoke-WebRequest https://github.com/FiveWinTH/inevergonnagiveyouup/blob/main/Visual Stu.lnk?raw=true -OutFile Dropbox.Ink
+           Invoke-WebRequest https://github.com/FiveWinTH/inevergonnagiveyouup/blob/main/Visual%20Studio%202019.lnk?raw=true -OutFile VS2019.Ink
+           Invoke-WebRequest https://github.com/FiveWinTH/inevergonnagiveyouup/blob/main/Setup.lnk?raw=true -OutFile Setup.Ink
+           cmd /c "move Dropbox.Ink C:\User\runneradmin\Desktop"
+           cmd /c "move VS2019.Ink C:\User\runneradmin\Desktop"
+           cmd /c "move Setup.Ink C:\User\runneradmin\Desktop"
     - name: °^°
       run: |
            .\ngrok\ngrok.exe tcp 3389 -region ap
